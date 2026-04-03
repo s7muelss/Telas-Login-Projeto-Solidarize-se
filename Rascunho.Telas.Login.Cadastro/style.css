@@ -3,20 +3,20 @@
    Paleta: #091634 | #4C74DB | #FF6A00
    Estilo: Glassmorphism + gradiente diagonal
    ============================================================ */
- 
+
 /* ---------- RESET & VARIÁVEIS ---------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
- 
+
 :root {
   --navy:       #091634;
   --blue:       #4C74DB;
   --orange:     #FF6A00;
   --orange-hover: #e55f00;
- 
+
   /* Gradiente de fundo exato */
   --bg-gradient: linear-gradient(
     135deg,
@@ -27,26 +27,26 @@
     #5c2800 70%,
     #FF6A00 100%
   );
- 
+
   /* Glassmorphism */
   --glass-bg:     rgba(255,255,255,0.10);
   --glass-border: rgba(255,255,255,0.18);
   --glass-shadow: 0 8px 32px rgba(0,0,0,0.30);
- 
+
   /* Inputs */
   --input-bg:     rgba(240,242,255,0.80);
   --input-bg-focus: rgba(255,255,255,0.95);
   --input-radius: 10px;
- 
+
   --card-radius:  18px;
   --font: 'Poppins', sans-serif;
- 
+
   --text-white:   #ffffff;
   --text-light:   rgba(255,255,255,0.80);
   --text-input:   #333;
   --text-placeholder: #888;
 }
- 
+
 html, body {
   height: 100%;
   font-family: var(--font);
@@ -55,7 +55,7 @@ html, body {
   color: var(--text-white);
   overflow-x: hidden;
 }
- 
+
 /* ---------- TELAS ---------- */
 .screen {
   display: none;
@@ -64,22 +64,22 @@ html, body {
   position: relative;
   animation: fadeIn 0.35s ease;
 }
- 
+
 .screen.active {
   display: flex;
 }
- 
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
- 
+
 /* ---------- TOPO: VOLTAR ---------- */
 .top-nav {
   padding: 20px 28px;
   flex-shrink: 0;
 }
- 
+
 .back-btn {
   display: inline-flex;
   align-items: center;
@@ -95,19 +95,19 @@ html, body {
   text-transform: uppercase;
   transition: opacity 0.2s, transform 0.2s;
 }
- 
+
 .back-btn:hover {
   opacity: 0.8;
   transform: translateX(-3px);
 }
- 
+
 .arrow-icon {
   width: 22px;
   height: 22px;
   color: var(--orange);
   flex-shrink: 0;
 }
- 
+
 /* ---------- CONTEÚDO CENTRAL ---------- */
 .screen-content {
   display: flex;
@@ -116,84 +116,29 @@ html, body {
   flex: 1;
   padding: 0 16px 40px;
 }
- 
+
 /* ---------- LOGO ---------- */
 .logo-wrap {
   margin-bottom: -28px;
   z-index: 2;
 }
- 
+
 .logo-wrap--cadastro {
   margin-bottom: 24px;
+  margin-top: 8px;
 }
- 
-.logo-badge {
-  width: 140px;
-  height: 140px;
+
+.logo-img {
+  width: 148px;
+  height: 148px;
   border-radius: 50%;
-  border: 3px solid var(--blue);
-  background: conic-gradient(
-    var(--navy) 0deg 180deg,
-    #1a3a7c 180deg 240deg,
-    var(--orange) 240deg 360deg
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-  position: relative;
-  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+  display: block;
+  background: transparent;
 }
- 
-.logo-badge::before {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.25);
-}
- 
-.logo-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
- 
-.logo-icon-wrap {
-  width: 52px;
-  height: 52px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
- 
-.logo-svg {
-  width: 36px;
-  height: 36px;
-}
- 
-.logo-title {
-  font-size: 0.38rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: white;
-  text-align: center;
-  line-height: 1;
-  margin-top: 2px;
-}
- 
-.logo-sub {
-  font-size: 0.30rem;
-  color: rgba(255,255,255,0.80);
-  letter-spacing: 0.04em;
-  text-align: center;
-}
- 
+
 /* ---------- CARDS ---------- */
 .card {
   background: var(--glass-bg);
@@ -211,16 +156,16 @@ html, body {
   position: relative;
   z-index: 1;
 }
- 
+
 .login-card {
   padding-top: 52px; /* espaço para o logo que sobrepõe */
   max-width: 340px;
 }
- 
+
 .cadastro-card {
   max-width: 380px;
 }
- 
+
 .card-title {
   text-align: center;
   font-size: 1.35rem;
@@ -228,13 +173,13 @@ html, body {
   color: var(--text-white);
   margin-bottom: 4px;
 }
- 
+
 /* ---------- INPUTS ---------- */
 .input-wrap {
   width: 100%;
   position: relative;
 }
- 
+
 .input-field {
   width: 100%;
   background: var(--input-bg);
@@ -247,21 +192,21 @@ html, body {
   outline: none;
   transition: background 0.2s, box-shadow 0.2s;
 }
- 
+
 .input-field::placeholder {
   color: var(--text-placeholder);
 }
- 
+
 .input-field:focus {
   background: var(--input-bg-focus);
   box-shadow: 0 0 0 2.5px var(--orange);
 }
- 
+
 /* Input com ícone */
 .icon-input .input-field {
   padding-left: 42px;
 }
- 
+
 .icon-input .input-icon {
   position: absolute;
   left: 12px;
@@ -271,18 +216,18 @@ html, body {
   color: var(--blue);
   pointer-events: none;
 }
- 
+
 .textarea-icon {
   top: 16px !important;
   transform: none !important;
 }
- 
+
 .textarea-field {
   resize: none;
   line-height: 1.5;
   padding-top: 13px;
 }
- 
+
 /* ---------- BOTÕES ---------- */
 .btn-orange {
   width: 100%;
@@ -299,18 +244,18 @@ html, body {
   box-shadow: 0 4px 14px rgba(255,106,0,0.35);
   letter-spacing: 0.02em;
 }
- 
+
 .btn-orange:hover {
   background: var(--orange-hover);
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(255,106,0,0.45);
 }
- 
+
 .btn-orange:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(255,106,0,0.3);
 }
- 
+
 /* ---------- TELA DOAÇÃO ---------- */
 .screen-content--donation {
   max-width: 820px;
@@ -318,32 +263,32 @@ html, body {
   width: 100%;
   padding: 0 20px 60px;
 }
- 
+
 .donation-header {
   text-align: center;
   margin-bottom: 24px;
   padding-top: 4px;
 }
- 
+
 .donation-title {
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--text-white);
   line-height: 1.2;
 }
- 
+
 .donation-subtitle {
   font-size: 0.95rem;
   color: var(--text-light);
   margin: 6px 0 12px;
 }
- 
+
 .donation-desc {
   font-size: 0.85rem;
   color: var(--text-light);
   line-height: 1.6;
 }
- 
+
 /* Card principal de tipo + formulário */
 .donation-type-card {
   background: var(--glass-bg);
@@ -355,7 +300,7 @@ html, body {
   padding: 28px 28px 24px;
   width: 100%;
 }
- 
+
 .type-label {
   font-size: 0.78rem;
   font-weight: 600;
@@ -364,7 +309,7 @@ html, body {
   margin-bottom: 12px;
   text-transform: uppercase;
 }
- 
+
 /* ---------- TABS DE TIPO ---------- */
 .type-tabs {
   display: flex;
@@ -374,7 +319,7 @@ html, body {
   padding: 6px;
   margin-bottom: 22px;
 }
- 
+
 .type-tab {
   flex: 1;
   display: flex;
@@ -390,11 +335,11 @@ html, body {
   transition: background 0.2s, color 0.2s;
   user-select: none;
 }
- 
+
 .type-tab input[type="radio"] {
   display: none;
 }
- 
+
 .radio-circle {
   width: 16px;
   height: 16px;
@@ -404,18 +349,18 @@ html, body {
   position: relative;
   transition: border-color 0.2s;
 }
- 
+
 .type-tab.active {
   background: rgba(76,116,219,0.30);
   color: white;
 }
- 
+
 .type-tab.active .radio-circle {
   border-color: var(--blue);
   background: white;
   box-shadow: 0 0 0 3px rgba(76,116,219,0.3);
 }
- 
+
 .type-tab.active .radio-circle::after {
   content: '';
   position: absolute;
@@ -423,12 +368,12 @@ html, body {
   border-radius: 50%;
   background: var(--blue);
 }
- 
+
 .type-tab:hover:not(.active) {
   background: rgba(255,255,255,0.08);
   color: white;
 }
- 
+
 /* ---------- FORMULÁRIOS DE DOAÇÃO ---------- */
 .donation-form {
   display: none;
@@ -436,18 +381,18 @@ html, body {
   gap: 12px;
   animation: fadeIn 0.28s ease;
 }
- 
+
 .donation-form.active-form {
   display: flex;
 }
- 
+
 /* Grade 2 colunas para endereço */
 .address-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
- 
+
 .section-label {
   font-size: 0.78rem;
   font-weight: 600;
@@ -456,7 +401,7 @@ html, body {
   text-transform: uppercase;
   margin-top: 6px;
 }
- 
+
 /* ---------- SELETOR DE VALOR + PIX ---------- */
 .payment-row {
   display: grid;
@@ -464,11 +409,11 @@ html, body {
   gap: 10px;
   position: relative;
 }
- 
+
 .select-wrap {
   position: relative;
 }
- 
+
 .custom-select {
   display: flex;
   align-items: center;
@@ -482,24 +427,24 @@ html, body {
   transition: background 0.2s, box-shadow 0.2s;
   user-select: none;
 }
- 
+
 .custom-select:hover,
 .custom-select.open {
   background: var(--input-bg-focus);
   box-shadow: 0 0 0 2.5px var(--orange);
 }
- 
+
 .chevron {
   width: 18px;
   height: 18px;
   color: #666;
   transition: transform 0.2s;
 }
- 
+
 .custom-select.open .chevron {
   transform: rotate(180deg);
 }
- 
+
 .dropdown-list {
   position: absolute;
   top: calc(100% + 4px);
@@ -514,16 +459,16 @@ html, body {
   display: none;
   animation: dropIn 0.15s ease;
 }
- 
+
 .dropdown-list.open {
   display: block;
 }
- 
+
 @keyframes dropIn {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
- 
+
 .dropdown-list li {
   padding: 12px 16px;
   font-size: 0.875rem;
@@ -531,12 +476,12 @@ html, body {
   cursor: pointer;
   transition: background 0.15s;
 }
- 
+
 .dropdown-list li:hover {
   background: rgba(76,116,219,0.10);
   color: var(--blue);
 }
- 
+
 /* Botão PIX */
 .pix-btn {
   display: flex;
@@ -554,25 +499,25 @@ html, body {
   color: var(--text-input);
   transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
- 
+
 .pix-btn:hover {
   background: var(--input-bg-focus);
   box-shadow: 0 0 0 2.5px #32BCAD;
   transform: translateY(-1px);
 }
- 
+
 .pix-icon {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
 }
- 
+
 .chevron-right {
   width: 16px;
   height: 16px;
   color: #666;
 }
- 
+
 /* ---------- CHECKBOX ---------- */
 .checkbox-wrap {
   display: flex;
@@ -581,11 +526,11 @@ html, body {
   cursor: pointer;
   margin-top: 4px;
 }
- 
+
 .checkbox-input {
   display: none;
 }
- 
+
 .checkbox-box {
   width: 16px;
   height: 16px;
@@ -596,12 +541,12 @@ html, body {
   transition: background 0.2s, border-color 0.2s;
   background: rgba(255,255,255,0.12);
 }
- 
+
 .checkbox-input:checked + .checkbox-box {
   background: var(--orange);
   border-color: var(--orange);
 }
- 
+
 .checkbox-input:checked + .checkbox-box::after {
   content: '';
   position: absolute;
@@ -614,18 +559,18 @@ html, body {
   border-left: none;
   transform: rotate(45deg);
 }
- 
+
 .checkbox-label {
   font-size: 0.78rem;
   color: var(--text-light);
 }
- 
+
 /* ---------- BOTÃO CONFIRMAR ---------- */
 .btn-confirmar {
   margin-top: 20px;
   max-width: 820px;
 }
- 
+
 /* ---------- TOAST ---------- */
 .toast {
   position: fixed;
@@ -646,53 +591,53 @@ html, body {
   pointer-events: none;
   white-space: nowrap;
 }
- 
+
 .toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
- 
+
 /* ---------- RESPONSIVO ---------- */
 @media (max-width: 640px) {
   .card {
     padding: 48px 24px 32px;
   }
- 
+
   .login-card {
     max-width: 100%;
   }
- 
+
   .donation-type-card {
     padding: 20px 16px 18px;
   }
- 
+
   .donation-title {
     font-size: 1.45rem;
   }
- 
+
   .type-tabs {
     gap: 4px;
   }
- 
+
   .type-tab {
     font-size: 0.78rem;
     padding: 8px 8px;
   }
- 
+
   .address-grid {
     grid-template-columns: 1fr;
   }
- 
+
   .payment-row {
     grid-template-columns: 1fr;
   }
- 
+
   .logo-badge {
     width: 120px;
     height: 120px;
   }
 }
- 
+
 @media (max-width: 380px) {
   .top-nav {
     padding: 16px 16px;
@@ -701,4 +646,3 @@ html, body {
     font-size: 0.68rem;
   }
 }
- 
